@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOMENTED</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: #ff0000;
+            font-family: 'Times New Roman', Times, serif;
+            overflow: hidden;
+        }
+
+        /* Side Galleries for Images - Desktop Layout Only */
+        .side-gallery {
+            display: none; /* DEFAULT: Hidden on mobile screens */
+            position: absolute;
+            top: 54%; 
+            transform: translateY(-50%);
+            flex-direction: column;
+            gap: 20px; 
+            z-index: 10;
+            text-align: center;
+        }
+
+        .side-gallery.left {
+            left: 4%; 
+        }
+
+        .side-gallery.right {
+            right: 4%; 
+        }
+
+        .side-gallery img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ff0000; 
+            object-fit: cover;
+        }
+
+        /* Custom label styling between images */
+        .member-label {
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+
+        .member-name {
+            color: #ff0000; 
+            font-weight: bold;
+        }
+
+        .member-role {
+            color: #ffffff; 
+            letter-spacing: 0.1rem;
+        }
+
+        /* Scrolling Marquee */
+        .scrolling-text {
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            z-index: 5;
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 25s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
+
+        /* Central Container */
+        .center-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 95%;
+            box-sizing: border-box;
+            z-index: 5;
+        }
+
+        .top-subtext {
+            font-size: 0.85rem;
+            letter-spacing: 0.6rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .main-logo-image {
+            width: 78vw;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bottom-subtext {
+            font-size: 0.85rem;
+            letter-spacing: 0.2rem;
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Coming Soon Message */
+        .coming-soon {
+            position: absolute;
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            letter-spacing: 0.3rem;
+            text-align: center;
+            width: 100%;
+            z-index: 5;
+        }
+
+        /* Copyright Message fixed at bottom edge */
+        .copyright-container {
+            position: absolute;
+            bottom: 1%;
+            width: 100%;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            z-index: 5;
+        }
+
+        /* DESKTOP STYLING ADJUSTMENT */
+        @media (min-width: 1024px) {
+            .main-logo-image {
+                width: 100%;
+                max-width: 720px;
+            }
+            .top-subtext, .bottom-subtext {
+                font-size: 0.95rem;
+            }
+            /* Show galleries and set their size strictly on desktop */
+            .side-gallery {
+                display: flex; 
+                width: 10vw; /* Slightly shrunk further to prevent overlapping the central area */
+            }
+            .member-name {
+                font-size: 1.1rem;
+            }
+            .member-role {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Scrolling text at the top with your lyrics -->
+    <div class="scrolling-text">
+        <span>FACES OF DEATH... TRUTH AS IT TO BE... WILLINGNESS, REJECTION.... INEVITABLE.... --- LIVING OF LIFE... HELL OF IT'S OWN... PAIN AND SUFFERING... A PLEASURE TO DIE!..</span>
+    </div>
+
+    <!-- LEFT SIDE IMAGES & TEXT -->
+    <div class="side-gallery left">
+        <img src="IMG1.jpg" alt="Left Gallery 1">
+        <div class="member-label">
+            <div class="member-name">ART CARRIERE</div>
+            <div class="member-role">Guitars</div>
+        </div>
+        <img src="IMG2.jpg" alt="Left Gallery 2">
+    </div>
+
+    <!-- Central Stacked Text Block -->
+    <div class="center-container">
+        <div class="top-subtext">WE &nbsp;&nbsp;&nbsp;&nbsp; ARE</div>
+        <img src="doomentedlogo.png" class="main-logo-image" alt="DOOMENTED">
+        <div class="bottom-subtext">AND YOU ARE DOOMED!!!</div>
+    </div>
+
+    <!-- RIGHT SIDE IMAGES & TEXT -->
+    <div class="side-gallery right">
+        <img src="IMG3.jpg" alt="Right Gallery 1">
+        <div class="member-label">
+            <div class="member-name">TED CORLETT</div>
+            <div class="member-role">Bass</div>
+        </div>
+        <img src="IMG4.jpg" alt="Right Gallery 2">
+    </div>
+
+    <!-- Coming Soon Message -->
+    <div class="coming-soon">
+        COMING SOON
+    </div>
+
+    <!-- Centered Copyright Message Fixed at Bottom -->
+    <div class="copyright-container">
+        ℗© 1997 - 2026 Doomented℠. All rights reserved.<br>
+        &copy; 2026 doomented.com. All rights reserved.
+    </div>
+
+</body>
+</html>
