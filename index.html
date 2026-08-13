@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doomented is a Canadian doom metal band formed in Vernon, British Columbia, by Art Carriere and Chris Lepodvin in 1996.">
+    <title>DOOMENTED // 1996-2026</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+            background:
+                radial-gradient(circle at 50% 18%, #111 0, #050505 34%, #000 78%);
+            color: #d90000;
+            font-family: "Times New Roman", Times, serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.18;
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255,255,255,0.035) 0,
+                    rgba(255,255,255,0.035) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+            z-index: 100;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            width: min(1500px, 96%);
+            margin: 0 auto;
+            padding: 18px 0 28px;
+        }
+
+        /* Old-school red frame */
+        .outer-frame {
+            border: 3px double #8b0000;
+            background: rgba(0, 0, 0, 0.94);
+            box-shadow:
+                0 0 0 1px #111,
+                0 0 30px rgba(90, 0, 0, 0.28);
+            padding: 8px;
+        }
+
+        .inner-frame {
+            border: 1px solid #4f0000;
+            padding: 10px;
+        }
+
+        /* Main title */
+        .site-header {
+            text-align: center;
+            border-bottom: 3px double #9b0000;
+            padding: 5px 8px 10px;
+        }
+
+        .logo-wrap {
+            display: inline-block;
+            max-width: 680px;
+            width: 82%;
+        }
+
+        .main-logo-image {
+            display: block;
+            width: 100%;
+            max-height: 190px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .header-strip {
+            margin-top: 5px;
+            padding: 5px 8px;
+            border-top: 1px solid #650000;
+            border-bottom: 1px solid #650000;
+            color: #777;
+            background: #050505;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.24rem;
+        }
+
+        .location-line {
+            margin-top: 4px;
+            color: #555;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.52rem;
+            letter-spacing: 0.18rem;
+            text-transform: lowercase;
+        }
+
+        /* Scrolling lyrics */
+        .scrolling-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 1px solid #650000;
+            background: #050505;
+            padding: 6px 0;
+            font-size: 0.95rem;
+            letter-spacing: 0.13rem;
+            text-transform: uppercase;
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 28s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Three-column 90s layout */
+        .content-grid {
+            display: grid;
+            grid-template-columns: minmax(145px, 0.72fr) minmax(420px, 2.1fr) minmax(145px, 0.72fr);
+            gap: 14px;
+            margin-top: 14px;
+            align-items: start;
+        }
+
+        .side-gallery,
+        .center-column {
+            min-width: 0;
+        }
+
+        .side-gallery {
+            border: 2px solid #550000;
+            background: #050505;
+            padding: 7px;
+            box-shadow: inset 0 0 0 1px #1e1e1e;
+        }
+
+        .gallery-heading {
+            text-align: center;
+            color: #888;
+            background: #080808;
+            border: 1px solid #400000;
+            padding: 5px 3px;
+            margin-bottom: 8px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.12rem;
+        }
+
+        .side-gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid #8d0000;
+            background: #080808;
+        }
+
+        .member-label {
+            text-align: center;
+            text-transform: uppercase;
+            padding: 7px 2px 9px;
+            line-height: 1.3;
+        }
+
+        .member-name {
+            color: #e00000;
+            font-weight: bold;
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .member-role {
+            color: #bdbdbd;
+            font-size: 0.75rem;
+            letter-spacing: 0.1rem;
+        }
+
+        /* Center */
+        .center-column {
+            text-align: center;
+        }
+
+        .warning-bar {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 5px 8px;
+            border: 1px solid #650000;
+            background: #050505;
+            color: #777;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .band-photo-box {
+            margin-top: 10px;
+            padding: 8px;
+            border: 3px double #9d0000;
+            background: #070707;
+        }
+
+        .band-photo-box img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 570px;
+            object-fit: contain;
+            margin: 0 auto;
+            border: 1px solid #444;
+            filter: contrast(1.08);
+        }
+
+        .photo-caption {
+            margin-top: 6px;
+            padding: 5px;
+            border-top: 1px solid #4e0000;
+            color: #777;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .band-members {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin-top: 6px;
+            padding: 5px 4px 2px;
+            color: #bdbdbd;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 0.82rem;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+        }
+
+        .band-members span {
+            padding: 0 12px;
+        }
+
+        .band-members span + span {
+            border-left: 1px solid #650000;
+        }
+
+        /* Song archive */
+        .song-box {
+            margin-top: 13px;
+            border: 3px double #8f0000;
+            background: #050505;
+            padding: 7px;
+            text-align: left;
+        }
+
+        .song-box-title {
+            text-align: center;
+            padding: 7px;
+            background: #0e0000;
+            border: 1px solid #700000;
+            color: #e00000;
+            font-weight: bold;
+            letter-spacing: 0.22rem;
+            text-transform: uppercase;
+        }
+
+        .song-location {
+            text-align: center;
+            color: #555;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.52rem;
+            letter-spacing: 0.18rem;
+            margin-top: 3px;
+            text-transform: lowercase;
+        }
+
+        .song-box-subtitle {
+            text-align: center;
+            color: #777;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.67rem;
+            padding: 6px 3px 8px;
+        }
+
+        .song-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-top: 1px solid #3b3b3b;
+        }
+
+        .song-list li {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            border-bottom: 1px solid #292929;
+            background: #080808;
+        }
+
+        .song-list li:nth-child(even) {
+            background: #050505;
+        }
+
+        .song-number {
+            padding: 8px 6px;
+            color: #777;
+            text-align: center;
+            border-right: 1px solid #3d0000;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+        }
+
+        .song-name {
+            padding: 8px 10px;
+            color: #cfcfcf;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+        }
+
+        .song-name a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+        }
+
+        .song-list li:hover .song-name {
+            color: #ff0000;
+            background: #170000;
+        }
+
+        .song-list li:hover .song-name a {
+            text-decoration: underline;
+            text-decoration-color: #650000;
+            text-underline-offset: 3px;
+        }
+
+        .coming-soon {
+            margin-top: 13px;
+            padding: 12px 8px;
+            border: 2px solid #650000;
+            background: #050505;
+            color: #e00000;
+            font-size: 1.15rem;
+            letter-spacing: 0.35rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 14px;
+            padding: 10px 5px 3px;
+            border-top: 3px double #650000;
+            color: #666;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.67rem;
+            line-height: 1.6;
+        }
+
+        .footer .red {
+            color: #8d0000;
+        }
+
+        @media (max-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .center-column {
+                order: 1;
+            }
+
+            .side-gallery.left {
+                order: 2;
+            }
+
+            .side-gallery.right {
+                order: 3;
+            }
+
+            .side-gallery {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
+                align-items: start;
+            }
+
+            .gallery-heading {
+                grid-column: 1 / -1;
+            }
+
+            .member-label {
+                align-self: center;
+            }
+
+            .main-logo-image {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .band-members {
+                flex-wrap: wrap;
+                row-gap: 3px;
+                font-size: 0.68rem;
+                letter-spacing: 0.06rem;
+            }
+
+            .band-members span {
+                padding: 2px 8px;
+            }
+
+            .band-members span + span {
+                border-left: 0;
+            }
+
+            .band-members span:not(:last-child)::after {
+                content: "  /";
+                color: #650000;
+                margin-left: 8px;
+            }
+
+            .band-photo-box {
+                padding: 5px;
+            }
+
+            .photo-caption {
+                font-size: 0.57rem;
+                letter-spacing: 0.05rem;
+            }
+
+            .song-box-title {
+                font-size: 0.85rem;
+                letter-spacing: 0.13rem;
+            }
+
+            .song-location,
+            .location-line {
+                font-size: 0.46rem;
+                letter-spacing: 0.12rem;
+            }
+
+            .page {
+                width: 100%;
+                padding: 0;
+            }
+
+            .outer-frame {
+                border-left: 0;
+                border-right: 0;
+            }
+
+            .inner-frame {
+                padding: 5px;
+            }
+
+            .content-grid {
+                gap: 8px;
+            }
+
+            .warning-bar {
+                font-size: 0.57rem;
+            }
+
+            .song-list li {
+                grid-template-columns: 40px 1fr;
+            }
+
+            .song-name {
+                letter-spacing: 0.04rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="outer-frame">
+            <div class="inner-frame">
+
+                <header class="site-header">
+                    <div class="logo-wrap">
+                        <img src="doomentedlogo.png" class="main-logo-image" alt="DOOMENTED">
+                    </div>
+                    <div class="header-strip">
+                        EST. VERNON, BRITISH COLUMBIA // 1996 // DOOM METAL // ARCHIVE
+                    </div>
+                    <div class="location-line">WINNIPEG MB CANADA</div>
+                </header>
+
+                <div class="scrolling-text">
+                    <span>FACING OF DEATH... TRUTH AS IT TO BE... WILLINGNESS, REJECTION.... INEVITABLE.... --- LIVING OF LIFE... HELL OF IT'S OWN... PAIN AND SUFFERING... A PLEASURE TO DIE!..</span>
+                </div>
+
+                <main class="content-grid">
+
+                    <aside class="side-gallery left">
+                        <div class="gallery-heading">/// MEMBER ARCHIVE ///</div>
+
+                        <img src="IMG1.jpg" alt="Art Carriere">
+                        <div class="member-label">
+                            <div class="member-name">ART CARRIERE</div>
+                            <div class="member-role">Guitars &amp; Vocals</div>
+                        </div>
+
+                        <img src="IMG2.jpg" alt="Doomented member photograph">
+                    </aside>
+
+                    <section class="center-column">
+                        <div class="warning-bar">
+                            <span>DOOMENTED // 1996</span>
+                            <span>NO FUTURE // NO MERCY</span>
+                        </div>
+
+                        <div class="band-photo-box">
+                            <img src="Band.jpg" alt="Doomented 1990s band photograph">
+                            <div class="band-members">
+                                <span>Chris Lepodvin</span>
+                                <span>Art Carriere</span>
+                                <span>Graham Burke</span>
+                            </div>
+                            <div class="photo-caption">
+                                DOOMENTED // ORIGINAL 1990s LINE-UP // VERNON, B.C.
+                            </div>
+                        </div>
+
+                        <div class="song-box">
+                            <div class="song-box-title">LIVE AT THE ZOO 2004</div>
+                            <div class="song-location">WINNIPEG MB CANADA</div>
+                            <div class="song-box-subtitle">
+                                SONG LIST // LIVE / DEMO / UNRELEASED MATERIAL
+                            </div>
+
+                            <ol class="song-list">
+                                <li><span class="song-number">01</span><span class="song-name"><a href="01 01 Deceasement.mp3" target="_blank" rel="noopener">Deceasement</a></span></li>
+                                <li><span class="song-number">02</span><span class="song-name"><a href="02 02 Slave Driver.mp3" target="_blank" rel="noopener">Slave Driver</a></span></li>
+                                <li><span class="song-number">03</span><span class="song-name"><a href="03 03 You Know.mp3" target="_blank" rel="noopener">You Know</a></span></li>
+                                <li><span class="song-number">04</span><span class="song-name"><a href="04 04 Sufferer.mp3" target="_blank" rel="noopener">Sufferer</a></span></li>
+                                <li><span class="song-number">05</span><span class="song-name"><a href="05 05 Dead Like Me.mp3" target="_blank" rel="noopener">Dead Like Me</a></span></li>
+                                <li><span class="song-number">06</span><span class="song-name"><a href="06 06 Tetra Hydro Cannibal.mp3" target="_blank" rel="noopener">Tetra Hydro Cannibal</a></span></li>
+                                <li><span class="song-number">07</span><span class="song-name"><a href="07 07 Open Wound.mp3" target="_blank" rel="noopener">Open Wound</a></span></li>
+                                <li><span class="song-number">08</span><span class="song-name"><a href="08 08 Doom To All.mp3" target="_blank" rel="noopener">Doom To All</a></span></li>
+                                <li><span class="song-number">09</span><span class="song-name"><a href="09 09 Molesting The Dead.mp3" target="_blank" rel="noopener">Molesting The Dead</a></span></li>
+                            </ol>
+                        </div>
+
+                        <div class="coming-soon">COMING SOON</div>
+                    </section>
+
+                    <aside class="side-gallery right">
+                        <div class="gallery-heading">/// MEMBER ARCHIVE ///</div>
+
+                        <img src="IMG3.jpg" alt="Ted Corlett">
+                        <div class="member-label">
+                            <div class="member-name">TED CORLETT</div>
+                            <div class="member-role">Bass</div>
+                        </div>
+
+                        <img src="IMG4.jpg" alt="Doomented member photograph">
+                    </aside>
+
+                </main>
+
+                <footer class="footer">
+                    <span class="red">℗© 1996 - 2026 Doomented℠.</span> All rights reserved.<br>
+                    &copy; 2026 doomented.com. All rights reserved.
+                </footer>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
